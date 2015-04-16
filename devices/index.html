@@ -14,6 +14,8 @@
     </title>
 
     <link rel="stylesheet" href="/device-api/docs.css">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/8.5/styles/github.min.css">
+	
 
     <!-- Favicons -->
     <link rel="apple-touch-icon-precomposed" href="/device-api/img/apple-touch-icon-precomposed.png">
@@ -31,7 +33,7 @@
         <nav class="masthead-nav">
           <a  href="/device-api/devices">Docs</a>
           <a  href="/device-api/v2">API v2</a>
-          <a href="https://github.com/aisuhua/device-api/tree/gh-pages" target="_blank">GitHub</a>
+          <a href="https://github.com/aisuhua/device-api" target="_blank">GitHub</a>
           <a href="http://aisuhua.github.io/" target="_blank">Blog</a>
         </nav>
       </div>
@@ -111,9 +113,14 @@
     </div>
 
     <script src="/device-api/js/anchor.min.js"></script>
+	<script src="http://cdn.bootcss.com/highlight.js/8.5/highlight.min.js"></script>
+	
     <script>
       var selector = '.markdown-body h2, .markdown-body h3, .markdown-body h4';
       addAnchors(selector);
+	  
+	  hljs.initHighlightingOnLoad();
     </script>
+	
   </body>
 </html>
