@@ -31,7 +31,7 @@
         <nav class="masthead-nav">
           <a  href="/device-api/devices">Docs</a>
           <a class="active" href="/device-api/v2">API v2</a>
-          <a href="https://github.com/aisuhua/device-api" target="_blank">GitHub</a>
+          <a href="https://github.com/aisuhua/device-api/tree/gh-pages" target="_blank">GitHub</a>
           <a href="http://aisuhua.github.io/" target="_blank">Blog</a>
         </nav>
       </div>
@@ -64,7 +64,7 @@
 
 <p>API 的基础地址是 http://10.20.17.211:8008/v2，地址中的 v2 标识当前接口的版本，调用时请替换成实际的版本。</p>
 
-<h3 id="json-bodies">JSON Bodies</h3>
+<h4 id="json-bodies">JSON Bodies</h4>
 
 <p>所有 POST, PUT, PATCH 请求所发送的内容都必须是 JSON 格式，并且消息头中必须设置 Content-Type 为 <code>application/json</code>，否则 API 会返回一个 <code>415 Unsupported Media Type</code> 状态码。</p>
 
@@ -74,7 +74,7 @@
 -d '{"content":"this is new content"}'
 </code></pre>
 
-<h3 id="http-verbs">HTTP Verbs</h3>
+<h4 id="http-verbs">HTTP Verbs</h4>
 
 <p>我们使用标准的 HTTP 动词来表示一个请求的意图：</p>
 
@@ -120,7 +120,7 @@
 
 <p>如果字段是字符型，使用空字符串（”“）而不是null来表示该字段的值为空。如果该字段是数组，则使用 [] 表示空数组。</p>
 
-<h3 id="http-status-codes">HTTP Status Codes</h3>
+<h4 id="http-status-codes">HTTP Status Codes</h4>
 
 <p>我们使用HTTP状态码来表示一个请求成功或失败。</p>
 
@@ -142,7 +142,7 @@
   <li><code>500 Internal Server Error</code> - [*]：服务器发生内部错误，用户将无法判断发出的请求是否成功</li>
 </ul>
 
-<h3 id="errors">Errors</h3>
+<h4 id="errors">Errors</h4>
 
 <p>400,404,500 系列的错误，响应内容是一个 JSON 对象，并且响应头的 Content-Type 为 application/json。</p>
 
@@ -211,7 +211,7 @@
 
 <p><code>code</code> 是全局唯一的错误代码，可以查看错误代码表，查询所对应的错误的详细含义。</p>
 
-<h3 id="validation-errors">Validation Errors</h3>
+<h4 id="validation-errors">Validation Errors</h4>
 
 <p>POST,PUT,PATHCH 请求发生验证错误时，将会返回 <code>422 Unprocessable Entry</code> 状态码。响应内容中将是 JSON 格式的错误信息数组。</p>
 
@@ -279,7 +279,7 @@
 <pre><code>GET /inn/100/devices?per_page=15&amp;page=2
 </code></pre>
 
-<h3 id="all-pages">All Pages</h3>
+<h4 id="all-pages">All Pages</h4>
 
 <p>为了满足部分接口需要一次性获取所有数据的要求，我们特意增加了 <code>all_pages</code> 参数，添加参数 <code>all_pages=true</code> 即可返回该接口的所有数据。<em>当然，为避免服务器压力过大，该参数应该尽量少用。</em></p>
 
@@ -330,7 +330,7 @@ Content-Language:en-us
 
 <p>以下将对在此版本我们可能暂时无法实现<em>（这是基于我们的开发进度和复杂度的考虑，这不代表这些特征是无关紧要的。如果你觉得应该在此版本中提供，可以把你的想法通过邮件告诉我们）</em>，但在未来可能实现的接口特征作一些说明。</p>
 
-<h3 id="field-filtering">Field Filtering</h3>
+<h4 id="field-filtering">Field Filtering</h4>
 
 <p>有时候 API 使用者不需要返回结果的所有字段，而是部分字段。在进行横向限制的时候（例如只返回API结果的前十条记录）还应该可以进行纵向限制。这个功能能有效减少网络带宽的压力和提高传输速度。实现该功能可以使用 <code>fields</code> 参数来筛选返回的字段。</p>
 
@@ -354,7 +354,7 @@ Content-Language:en-us
 }
 </code></pre>
 
-<h3 id="enveloping">Enveloping</h3>
+<h4 id="enveloping">Enveloping</h4>
 
 <p>如果你的 HTTP客户端获取状态码或头信息比较困难，或者你希望使用 JSONP 进行跨域请求时，我们可以把响应的所有内容（包括响应头）全部组装好放在响应内容里。只需要加上 envelope=true 请求参数，而此时接口只会返回 200 状态码。而真正的状态码、头信息以及响应内容都会在组装好的响应内容里（包装在信封里）。</p>
 
@@ -406,7 +406,6 @@ Content-Language:zh-cn
 
 <p>如果您愿意，您也可以选择 QQ 联系我们：<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1079087531&amp;site=qq&amp;menu=yes" title="http://wpa.qq.com/msgrd?v=3&amp;uin=1079087531&amp;site=qq&amp;menu=yes">点击弹出qq聊天窗口</a>。</p>
 
-
     </div>
 	
 	<div style="height:80px;"></div>
@@ -439,7 +438,7 @@ Content-Language:zh-cn
 
     <script src="/device-api/js/anchor.min.js"></script>
     <script>
-      var selector = '.markdown-body h2, .markdown-body h3';
+      var selector = '.markdown-body h2, .markdown-body h3, .markdown-body h4';
       addAnchors(selector);
     </script>
   </body>
