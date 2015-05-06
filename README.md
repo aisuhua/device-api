@@ -1,6 +1,6 @@
 # API v2 #
 
-本文档是设备管理系统第二版接口开发的设计原则，我们还在不断完善它。http://aisuhua.github.io/device-api
+本文档是设备管理系统第二版接口开发的设计原则，我们还在不断完善它。
 
 ## Introduction ##
 
